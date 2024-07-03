@@ -34,13 +34,13 @@ jobs:
         run: mvn clean install
 
       - name: Build Docker image
-        run: docker build -t helloworldmaven .
+        run: docker build -t helloworldv3 .
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/helloworldmaven:latest
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/helloworldv3:latest
 
       - name: Deploy to Kubernetes (optional)
         if: github.ref == 'refs/heads/main'
