@@ -44,7 +44,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      - name: find build
+        run: ls -l
+        
       # setup Docker buld action
       - name: Set up Docker Buildx
         id: buildx
