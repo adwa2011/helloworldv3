@@ -60,4 +60,3 @@ jobs:
 
       - name: Display Image Digest
         run: echo ${{ steps.docker/build-push-action.outputs.digest }}
-
